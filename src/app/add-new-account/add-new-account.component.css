@@ -1,0 +1,20 @@
+.example-card {
+    max-width: 100%;
+    text-align-last: center;
+    padding-inline: 20%;
+  }
+
+  .example-card2 {
+    max-width: 100%;
+    text-align-last: center;
+    padding-inline: 20%;
+  }
+  .button{
+    border-radius: 12px;
+    width: 2cm;
+    height: 1cm;
+    padding: 0.2cm;
+    background-color: rgb(58, 58, 191);
+    color:white;
+ 
+  }

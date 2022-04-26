@@ -1,0 +1,35 @@
+<div *ngIf="displayRes; else fillform" >
+<mat-card  class="example-card">
+    
+    <mat-card-subtitle> {{msg}}</mat-card-subtitle>
+    <mat-card-content>
+      <p>Amount transfered: {{transaction.amount}}</p>
+      <p>Owner : {{owner}}</p>
+      <p>Date : {{transaction.dateTransaction}}</p>
+    </mat-card-content>
+   
+  </mat-card>
+</div>
+  <ng-template #fillform>
+  <mat-card class="example-card2">
+    
+    <mat-card-subtitle> Creation of new account for Existed user </mat-card-subtitle>
+    <mat-card-content>
+      <form [formGroup]="form" (ngSubmit)="ff.form.valid ; ff.resetForm()" #ff="ngForm" >
+       <a>Please insert the initial amount </a>
+        <div class="form-outline form-white mb-4">
+          <input type="number"
+          formControlName="number" 
+          id="typenumber" 
+          class="form-control form-control-lg"
+           />
+        </div>
+          <br>
+        <button class="button" type="button" (click)="onSubmit()">Save</button>
+            
+
+      </form>
+    </mat-card-content>
+   
+  </mat-card>
+  </ng-template>
