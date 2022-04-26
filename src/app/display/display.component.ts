@@ -19,11 +19,12 @@ export class DisplayComponent implements OnInit {
 
   ELEMENT_DATA:Account[]=[]
   constructor(private apiService:ApiService) { }
-  
+  msg:string = ''
   name:string;
   surname:string;
   balance:number;
   ngOnInit(): void {
+    this.msg=''
     this.apiService.getCostumerDetails().subscribe(
       (      result: Costumer) => {
       console.log("result ",result)
@@ -35,6 +36,7 @@ export class DisplayComponent implements OnInit {
 
       this.dataSource.paginator = this.paginator;
       }
+      , (err)=> { this.msg="probably the api is not lunched"}
     )
   }
 
